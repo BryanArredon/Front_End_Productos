@@ -1,0 +1,70 @@
+<div class="welcome-container">
+  <!-- Header de Bienvenida -->
+  <div class="welcome-header">
+    <div class="header-content">
+      <div class="greeting-section">
+        <div class="store-icon">
+          <mat-icon class="store-icon-large">store</mat-icon>
+        </div>
+        <div class="greeting-text">
+          <p class="subtitle">Bienvenido a Sus Abarrotes Favoritos</p>
+          <p class="time">{{ currentTime | date:'EEEE, dd MMMM yyyy':'es' }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Características del Negocio -->
+  <div class="features-section">
+    <h2>¿Por qué elegirnos?</h2>
+    <div class="features-grid">
+      <div class="feature-card" *ngFor="let feature of features">
+        <div class="feature-icon">
+          <mat-icon [color]="feature.color">{{ feature.icon }}</mat-icon>
+        </div>
+        <div class="feature-content">
+          <h3>{{ feature.title }}</h3>
+          <p>{{ feature.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navegación Rápida -->
+  <div class="services-section">
+    <h2>Explora Nuestros Servicios</h2>
+    <div class="services-grid">
+      <div class="service-card" *ngFor="let action of quickActions" (click)="navigateTo(action.route)">
+        <div class="service-icon">
+          <mat-icon>{{ action.icon }}</mat-icon>
+        </div>
+        <div class="service-content">
+          <h3>{{ action.title }}</h3>
+          <p>{{ action.description }}</p>
+        </div>
+        <div class="service-arrow">
+          <mat-icon>arrow_forward</mat-icon>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sección de Contacto -->
+  <div class="contact-section">
+    <div class="contact-card">
+      <div class="contact-content">
+        <div class="contact-icon">
+          <mat-icon>phone</mat-icon>
+        </div>
+        <div class="contact-text">
+          <h3>¿Necesitas ayuda?</h3>
+          <p>Contáctanos y te atenderemos con gusto. Estamos aquí para servirte.</p>
+        </div>
+        <button mat-raised-button color="primary" class="contact-button">
+          <mat-icon>contact_support</mat-icon>
+          Contactar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
